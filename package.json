@@ -1,0 +1,19 @@
+{
+  "name": "express_handlebar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "star": "nodemon src/app.js",
+    "watch": "node-sass -w src/scss/ src/public/css/app.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "morgan": "^1.10.0",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
