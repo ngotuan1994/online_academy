@@ -1,1 +1,22 @@
-<h1> example App: Home</h1>
+<div class="mt-4">
+    <div class="row">
+        {{#each courses}}
+            <div class="col-sm-6 col-lg-4">
+                <div class="car card-course-item" style="width: 18rem;">
+                    <a href="/courses/{{this.name}}">
+                        <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                        <a href="/courses/{{this.name}}">
+                            <h5 class="card-title">{{this.title}}</h5>
+                        </a>
+                        <a href="/courses/{{this.name}}">
+                            <p class="card-text">{{this.description}}</p>
+                        </a>
+                        <a href="#" class="btn btn-primary">Add the course</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
