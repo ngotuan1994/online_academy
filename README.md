@@ -1,8 +1,8 @@
-Project: Online Academy
-Instructor : Mehdi Peiravi
-CPSC 362 – Foundations of Software Engineering
-Spring 2021
-Team members:
--Tuan Ngo
--Jimmie Dale Reyes
--Evan Delasota
+Project: Online Academy <br />
+Instructor : Mehdi Peiravi <br />
+CPSC 362 – Foundations of Software Engineering <br />
+Spring 2021 <br />
+Team members: <br />
+-Tuan Ngo <br />
+-Jimmie Dale Reyes <br />
+-Evan Delasota <br />
