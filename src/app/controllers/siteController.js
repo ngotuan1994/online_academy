@@ -1,3 +1,4 @@
+//To search for the course
 const Course = require('../model/Course');
 const {arrayMongooseObject} = require('../../util/mongoose')
 class SiteController{
