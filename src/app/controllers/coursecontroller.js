@@ -1,3 +1,4 @@
+//Creating courses and to check if the course is created
 const express = require('express');
 const Course = require('../model/Course');
 const {mongooseObject} = require('../../util/mongoose');
