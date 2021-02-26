@@ -1,0 +1,1 @@
+This is the Javascript navigation for the router to send and recieve data
