@@ -1,4 +1,3 @@
-//To check if there is anything new notifications.
 class NewsController{
     // [GET]  /news
     index(req,res){
