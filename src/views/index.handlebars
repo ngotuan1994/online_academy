@@ -168,6 +168,7 @@
         .img-card {
             display: flex;
             flex-direction: column;
+            
             position: relative;
             cursor: pointer;
         }
@@ -175,14 +176,27 @@
         .img-card > img {
             width: 200px;
             height: 200px;
+
+            transition: opacity 0.3s;
+        }
+
+        .img-card:hover > img {
+            opacity: 0.5;
         }
 
         .img-card > p {
             position: absolute;
-            left: 15%;
+            left: 10%;
             bottom: 10%;
 
+            color: white;
+            font-weight: 350;
+            transition: 0.3s;
 
+        }
+
+        .img-card:hover > p {
+            color: black;
         }
     </style>
 </head>
@@ -212,7 +226,7 @@
             </section>
             <section class="preview-container">
                 <header>
-                    <h1>Just some of the available courses</h1>
+                    <h1>Some of the available courses</h1>
                     <button>View All</button>
                 </header>
                 {{!-- A preview of some of the courses available --}}
