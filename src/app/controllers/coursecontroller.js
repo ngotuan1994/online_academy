@@ -1,7 +1,6 @@
-//Creating courses and to check if the course is created
 const express = require('express');
 const Course = require('../model/Course');
-const {mongooseObject} = require('../../util/mongoose');
+const {mongooseObject, arrayMongooseObject} = require('../../util/mongoose');
 const { renderSync } = require('node-sass');
 class SiteController{
     // [GET]  /
@@ -25,7 +24,14 @@ class SiteController{
         res.send("Sucess!");
 
     }
-    
+    //get   /courses/:id/edit
+    edit(req,res,next){
+        Course.findById(req.params.id)
+            .then(course=> res.render('courses/edit',{ 
+                course: mongooseObject(course)
+            }))
+            .catch(next);
+    };
 }
 
 module.exports = new SiteController;

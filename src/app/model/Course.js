@@ -1,4 +1,4 @@
-//Creating the course, inserting the name image, but to also update it.
+
 const mongoose = require('mongoose');
 
 const Course = mongoose.Schema({

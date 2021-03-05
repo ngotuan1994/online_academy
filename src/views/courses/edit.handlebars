@@ -1,0 +1,19 @@
+
+<div class="mt-4">
+    <h1> Edit Courses</h1>
+        <form method="POST" action="/courses/{{course._id}}">
+            <div class="form-group">
+                <label for="name">Course's Name</label>
+                <input type="text" class="form-control" value="{{course.name}}" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="description">Course's Description</label>
+                <input type="text" class="form-control"  value="{{course.description}}" id="description" name="description">
+            </div>
+            <div class="form-group">
+                <label for="image">Image link</label>
+                <input type="text" class="form-control"  value="{{course.image}}" id="image" name="image" >
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+</div>

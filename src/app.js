@@ -10,10 +10,20 @@ const mongoose = require('mongoose');
 require('dotenv/config');
 const db = require('./config/db');
 db.connect();
-
+const {auth} = require('express-openid-connect');
 
 app.use(express.json());
 app.use(express.urlencoded( {extended: true}));
+
+const config = {
+    authRequired: false,
+    auth0Logout: true,
+    baseURL: process.env.baseURL,
+    clientID: process.env.clientID,
+    issuerBaseURL: process.env.issuerBaseURL,
+    secret: process.env.secret,
+  };
+app.use(auth(config));
 route(app);
 app.engine('handlebars',exphbs());
 app.set('view engine', 'handlebars');
@@ -25,6 +35,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.listen(3000,(req,res)=>{
     console.log(`Server is running in PORT 3000`);
 });
+
 
 
 
