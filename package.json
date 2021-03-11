@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/app.js",
-    "watch": "node-sass -w src/scss/ src/public/css/app.css"
+    "watch": "node-sass -w src/scss/ --output src/public/css/"
   },
   "author": "",
   "license": "ISC",

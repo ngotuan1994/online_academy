@@ -4,8 +4,7 @@ const router = express.Router();
 const siteController = require('../app/controllers/siteController');
 const { requiresAuth } = require('express-openid-connect');
 
-router.use('/search',requiresAuth(),  siteController.search);
-router.use('/', siteController.index );
-
+router.use('/home',requiresAuth(), siteController.index );
+router.use('/', siteController.landing);
 
 module.exports = router;

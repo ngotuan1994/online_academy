@@ -10,8 +10,8 @@ class SiteController{
         course.catch(next);
     }
     // [GET]  /search
-    search(req,res){
-        res.render('search');
+    landing(req,res){
+        res.render('index', {layout: 'landing.handlebars'});
     }
 }
 
