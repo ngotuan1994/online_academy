@@ -3,6 +3,7 @@ const siteRouter = require('./site');
 const newRouter = require('./news');
 const courseRouter = require('./courses');
 const meRouter = require('./me');
+const adminRouter = require('./admin');
 const Course = require('../app/model/Course');
 const Role = require('../app/model/Role');
 
@@ -48,7 +49,7 @@ function route(app){
       res.send("Admin and Prof are both can access this route")
     })
 
-
+    app.use('/admin',requiresAuth(),adminRouter);
     app.use('/news',requiresAuth(), newRouter);
     app.use('/courses',requiresAuth(),courseRouter);
     app.use('/me',requiresAuth(), meRouter);

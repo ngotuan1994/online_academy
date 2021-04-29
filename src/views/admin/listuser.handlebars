@@ -1,0 +1,11 @@
+<table class="table">
+    <tbody>
+        {{#each roles}}
+        <tr>
+            <th scope="row">{{@index}}</th>
+            <td>{{this.email}}</td>
+            <td>{{this.role}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

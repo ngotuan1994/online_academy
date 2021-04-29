@@ -1,4 +1,5 @@
 const Course = require('../model/Course');
+const UsercCourse= require('../model/UserCourse');
 const {arrayMongooseObject} = require('../../util/mongoose')
 class SiteController{
     // [GET]  /
@@ -13,6 +14,12 @@ class SiteController{
     landing(req,res){
         res.render('index', {layout: 'landing.handlebars'});
     }
+    // addcourses(req,res,next){
+    //     const usercourses = UsercCourse.insertOne({
+    //         email : req.body.email
+    //         courses.pushback
+    //     })
+    // }
 }
 
 module.exports = new SiteController;

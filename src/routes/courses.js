@@ -11,3 +11,4 @@ router.get('/:id/edit',authenRoleProf,courseController.edit);
 router.put('/:id',authenRoleProf,courseController.update);
 router.delete('/:id',authenRoleProf,courseController.destroy);
 module.exports = router;
+

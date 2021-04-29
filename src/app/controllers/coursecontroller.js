@@ -21,7 +21,7 @@ class SiteController{
     store(req,res,next){
         const course = new Course(req.body);
         course.save();
-        res.send("Sucess!");
+        res.redirect("/home");
 
     }
     //get   /courses/:id/edit
