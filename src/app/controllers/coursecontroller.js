@@ -2,6 +2,7 @@ const express = require('express');
 const Course = require('../model/Course');
 const {mongooseObject, arrayMongooseObject} = require('../../util/mongoose');
 const { renderSync } = require('node-sass');
+const UserCourse = require('../model/UserCourse'); 
 class SiteController{
     // [GET]  /
     show(req,res,next){
@@ -43,6 +44,18 @@ class SiteController{
         Course.deleteOne({_id: req.params.id})
             .then( ()=> res.redirect('back'))
             .catch(next)
+    }
+
+    //put /coruses/student/:coursesname
+    upsert(req,res,next){
+        UserCourse.findOneAndUpdate({email : req.oidc.user.email},{
+            email: req.oidc.user.email,
+            $addToSet: { courses: req.params.id}
+        },{upsert : true , new : true}
+        )
+            .then(()=> 
+                res.redirect("/home"))
+            .catch(next);
     }
 
 }

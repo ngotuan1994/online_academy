@@ -10,5 +10,7 @@ router.post('/store',requiresAuth(),courseController.store);
 router.get('/:id/edit',authenRoleProf,courseController.edit);
 router.put('/:id',authenRoleProf,courseController.update);
 router.delete('/:id',authenRoleProf,courseController.destroy);
+router.get('/student/:id',requiresAuth(),courseController.upsert);
+
 module.exports = router;
 

@@ -3,6 +3,8 @@ const Course = require('../model/Course');
 const {arrayMongooseObject} = require('../../util/mongoose');
 const {mongooseObject} = require('../../util/mongoose');
 const Role = require('../model/Role');
+const UserCourse = require('../model/UserCourse');
+
 const { requiresAuth } = require('express-openid-connect');
 
 
@@ -12,18 +14,25 @@ class meController{
     storedCourses(req,res,next){
         const role = Role.findOne({email: req.oidc.user.email})
         role.then(roles => {
-            if(roles.role == "prof" || roles.role == "admin"){
+            if(roles.role == "admin"){
                 Course.find({})
                 .then(courses => res.render('me/storedCourses', {
                     courses : arrayMongooseObject(courses)}))
                 .catch(next);        
             }
+            if(roles.role == "prof"){
+                UserCourse.find({email: req.oidc.user.email})
+                .then(courses => res.render('me/storedCourses', {
+                    courses : arrayMongooseObject(courses)}))
+                .catch(next); 
+            }
             if(roles.role =="user"){
-                Course.find({})
+                UserCourse.find({email: req.oidc.user.email})
                 .then(courses => res.render('me/storedCoursesStudent', {
                     courses : arrayMongooseObject(courses)}))
                 .catch(next);  
             }
+
         })
 
 
@@ -43,6 +52,8 @@ class meController{
        
 
     }
+
+
 
 }
 

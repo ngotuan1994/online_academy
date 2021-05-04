@@ -6,7 +6,8 @@ async function connect(){
         await mongoose.connect(process.env.DB_CONNECTION,
             {
                 useNewUrlParser : true,
-                useUnifiedTopology : true
+                useUnifiedTopology : true,
+                useFindAndModify : false
             });
             console.log('Connect Successfully')
     }catch(err)
