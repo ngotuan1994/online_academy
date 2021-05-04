@@ -45,7 +45,14 @@ class SiteController{
             .then( ()=> res.redirect('back'))
             .catch(next)
     }
-
+    //                 /courses/:id/delete
+    delete(req,res,next){
+        UserCourse.findOneAndUpdate({email: req.oidc.user.email},{
+            $pull : {courses :req.params.id}
+        })
+            .then( ()=> res.redirect('back'))
+            .catch(next)
+    }
     //put /coruses/student/:coursesname
     upsert(req,res,next){
         UserCourse.findOneAndUpdate({email : req.oidc.user.email},{
