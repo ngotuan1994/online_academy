@@ -6,23 +6,21 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Course Name</th>
-            <th scope="col" colspan="2">Date</th>
             
         </tr>
     </thead>
     <tbody>
-        {{#each courses}}
-        
+        {{#each courses as |co|}}
+        {{#each this.courses}}
         <tr>
             <th scope="row">{{@index}}</th>
-            <td>{{this.name}}</td>
-            <td>{{this.createAt}}</td>
+            <td>{{this}}</td>
             <td>
-                <a href="/courses/{{this.name}}/edit" class ="btn btn-link">Edit</a>
-                <a href="/courses/{{this.name}}" class ="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{this.name}}">Delete</a>
+                <a href="/courses/{{this}}/edit" class ="btn btn-link">Edit</a>
+                <a href="/courses/{{this}}" class ="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{this}}">Delete</a>
             </td>
         </tr>
-        
+        {{/each}}
         {{/each}}
     </tbody>
     </table>

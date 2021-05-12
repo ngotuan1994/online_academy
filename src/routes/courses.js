@@ -8,7 +8,9 @@ router.get('/create',requiresAuth(), authenRoleProf, courseController.create);
 router.get('/:courseName',requiresAuth(), courseController.show);
 router.post('/store',requiresAuth(),courseController.store);
 router.get('/:id/edit',authenRoleProf,courseController.edit);
-router.put('/:id',authenRoleProf,courseController.update);
+
+router.put('/:id/:name',authenRoleProf,courseController.update);
+
 router.delete('/:id',authenRoleProf,courseController.destroy);
 router.get('/:id/delete',requiresAuth(),courseController.delete);
 router.get('/student/:id',requiresAuth(),courseController.upsert);
