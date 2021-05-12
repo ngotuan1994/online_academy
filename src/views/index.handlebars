@@ -67,42 +67,14 @@
                     <button>View All</button>
                 </header>
                 <section class="course-cards">
+                    {{#each courses}}
                     <div class="img-card">
-                        <img src="/img/css.png" alt="css"/>
+                        <img src="{{this.image}}" alt="css"/>
                         <p>
-                        CSS
+                        {{this.name}}
                         </p>
                     </div>
-                    <div class="img-card">
-                        <img src="/img/css.png" alt="css"/>
-                        <p>
-                        CSS
-                        </p>
-                    </div>
-                    <div class="img-card">
-                        <img src="/img/css.png" alt="css"/>
-                        <p>
-                        CSS
-                        </p>
-                    </div>
-                    <div class="img-card">
-                        <img src="/img/css.png" alt="css"/>
-                        <p>
-                        CSS
-                        </p>
-                    </div>
-                    <div class="img-card">
-                        <img src="/img/css.png" alt="css"/>
-                        <p>
-                        CSS
-                        </p>
-                    </div>
-                    <div class="img-card">
-                        <img src="/img/css.png" alt="css"/>
-                        <p>
-                        CSS
-                        </p>
-                    </div>
+                    {{/each}}
                 </section>
             </section>
         </main>

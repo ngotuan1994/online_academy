@@ -16,19 +16,19 @@ class meController{
         role.then(roles => {
             if(roles.role == "admin"){
                 Course.find({})
-                .then(courses => res.render('me/storedCourses', {
+                .then(courses => res.render('me/storedCourses', { layout: 'admin.handlebars', user: req.oidc.user,
                     courses : arrayMongooseObject(courses)}))
                 .catch(next);        
             }
             if(roles.role == "prof"){
                 UserCourse.find({email: req.oidc.user.email})
-                .then(courses => res.render('me/storedCoursesProf', {
+                .then(courses => res.render('me/storedCoursesProf', { layout: 'main.handlebars', user: req.oidc.user,
                     courses : arrayMongooseObject(courses)}))
                 .catch(next); 
             }
             if(roles.role =="user"){
                 UserCourse.find({email: req.oidc.user.email})
-                .then(courses => res.render('me/storedCoursesStudent', {
+                .then(courses => res.render('me/storedCoursesStudent', { layout: 'user.handlebars', user: req.oidc.user,
                     courses : arrayMongooseObject(courses)}))
                 .catch(next);  
             }

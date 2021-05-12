@@ -48,7 +48,11 @@ class SiteController{
     }
     // [GET]  /search
     landing(req,res){
-        res.render('index', {layout: 'landing.handlebars'});
+        const course = Course.find({},).limit(3);
+        course.then(courses =>{
+        res.render('index', {layout: 'landing.handlebars', courses : arrayMongooseObject(courses)});
+        })
+        course.catch();
     }
     // addcourses(req,res,next){
     //     const usercourses = UsercCourse.insertOne({
