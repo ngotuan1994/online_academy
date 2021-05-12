@@ -52,13 +52,15 @@
     background-attachment: scroll;
     color: white;
     box-shadow: 5px 5px 55px #ccc; }
+
   body {
     min-height: 100vh;
   }
+
   .main {
     padding: 8rem 0; }
   
-  .main > section {
+  .main  section {
     display: flex;
     align-items: center;
     height: 100%;
@@ -149,11 +151,10 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 3rem 4rem;
     padding: 0 4rem;
-    margin-top: 3rem;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
     max-width: 1440px;
     border-radius: 3px;
     box-shadow: 0 1px 45px #ccc; }
@@ -239,7 +240,7 @@
     background-color: rgba(158, 171, 178, 0.425);
     padding: 1.5rem 8rem;
     height: 100px;
-    margin-top: 125px; 
+    margin-top: 0px; 
     clear: both;
     position: relative;
   }

@@ -1,4 +1,4 @@
-<div class="landing-container">    
+<div class="container">    
         <main>
             <section class="banner">
                 <div class="phrase">
@@ -66,23 +66,10 @@
                     <button>View All</button>
                 </header>
                 <section class="course-cards">
-                    {{#each courses}}
                     <div class="img-card">
-                        <img src="{{this.image}}" alt="css"/>
+                        <img src="/img/py.png" alt="python"/>
                         <p>
-                        CSS
-                        </p>
-                    </div>
-                    <div class="img-card">
-                        <img src="/img/html.png" alt="html"/>
-                        <p>
-                        HTML
-                        </p>
-                    </div>
-                    <div class="img-card">
-                        <img src="/img/js.png" alt="javascript"/>
-                        <p>
-                        Javascript
+                        Python
                         </p>
                     </div>
                     <div class="img-card">
@@ -97,22 +84,10 @@
                         Angular
                         </p>
                     </div>
+                    {{#each courses}}
                     <div class="img-card">
-                        <img src="/img/py.png" alt="python"/>
+                        <img src="{{this.image}}" alt="css"/>
                         <p>
-                        Python
-                        </p>
-                    </div>
-                    <div class="img-card">
-                        <img src="/img/sp.png" alt="spring"/>
-                        <p>
-                        Spring
-                        </p>
-                    </div>
-                    <div class="img-card">
-                        <img src="/img/ps.png" alt="photoshop"/>
-                        <p>
-                        Photoshop
                         {{this.name}}
                         </p>
                     </div>
