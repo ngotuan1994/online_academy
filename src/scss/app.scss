@@ -341,32 +341,27 @@ header {
 
     box-shadow: 1px 1px 20px rgb(68, 67, 67);
 
-    padding: 1rem 0;
-}
+    padding: 1rem 0; }
 
 
-header div  h1 {
+
+header .landing {
+  margin: 1rem 0 0 5%; }
+
+header .landing  > h1 {
     margin-left: 1rem;
     font-size: 2.5rem;
-    font-family:'Prata', 'Times New Roman', Times, serif;
-}
-
-nav {
-    margin: 1rem 0 0 5%;
-}
+    font-family:'Prata', 'Times New Roman', Times, serif; }
 
 header ul li {
     display: inline-block;
-    padding: 0 1.5rem 0 0;
-}
+    padding: 0 1.5rem 0 0; }
 
-header nav a {
+header .landing a {
     font-family:'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     font-size: 1.2rem;
-    color: #0072E1;
-}
+    color: #0072E1; }
 
-header nav a:hover {
-    color:#ccc;
-} 
+header .landing a:hover {
+    color:#ccc; } 
