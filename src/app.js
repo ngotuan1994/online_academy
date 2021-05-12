@@ -28,7 +28,11 @@ const config = {
 
 app.use(auth(config));
 route(app);
-app.engine('handlebars',exphbs());
+app.engine('handlebars',exphbs({
+  helpers: {
+    get: (obj,prop) => obj[prop]
+  }
+}));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname,'views'));
 app.use(morgan('combined'));

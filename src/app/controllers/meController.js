@@ -22,7 +22,7 @@ class meController{
             }
             if(roles.role == "prof"){
                 UserCourse.find({email: req.oidc.user.email})
-                .then(courses => res.render('me/storedCourses', {
+                .then(courses => res.render('me/storedCoursesProf', {
                     courses : arrayMongooseObject(courses)}))
                 .catch(next); 
             }
