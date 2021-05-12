@@ -1,6 +1,6 @@
 class ContactController {
     index(req, res) {
-        res.render('contact');
+        res.render('contact', {layout: 'contact.handlebars'});
     }
 }
 
