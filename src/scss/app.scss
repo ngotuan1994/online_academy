@@ -43,6 +43,7 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    max-width: 1440px;
     height: 75vh;
     position: relative;
     background: url(/img/bg.jpg) no-repeat center center fixed;
@@ -111,7 +112,6 @@
     display: flex;
     justify-content: space-between;
     align-self: center;
-    margin-bottom: 3rem;
     margin-top: 3rem;
     padding: 4rem;
     width: 90%;
