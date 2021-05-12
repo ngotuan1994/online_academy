@@ -4,6 +4,8 @@ const newRouter = require('./news');
 const courseRouter = require('./courses');
 const meRouter = require('./me');
 const adminRouter = require('./admin');
+const aboutRouter = require('./about');
+const contactRouter = require('./contact');
 const Course = require('../app/model/Course');
 const Role = require('../app/model/Role');
 
@@ -53,6 +55,8 @@ function route(app){
     app.use('/news',requiresAuth(), newRouter);
     app.use('/courses',requiresAuth(),courseRouter);
     app.use('/me',requiresAuth(), meRouter);
+    app.use('/about', aboutRouter);
+    app.use('/contact', contactRouter);
     app.use('/',siteRouter);
 
 
