@@ -67,9 +67,11 @@
                     <button>View All</button>
                 </header>
                 <section class="course-cards">
+                    {{#each courses}}
                     <div class="img-card">
-                        <img src="/img/css.png" alt="css"/>
+                        <img src="{{this.image}}" alt="css"/>
                         <p>
+<<<<<<< HEAD
                         CSS
                         </p>
                     </div>
@@ -113,8 +115,12 @@
                         <img src="/img/ps.png" alt="photoshop"/>
                         <p>
                         Photoshop
+=======
+                        {{this.name}}
+>>>>>>> 04530dcd31bec41ae8b983cdf37afc2f3f38cb56
                         </p>
                     </div>
+                    {{/each}}
                 </section>
             </section>
         </main>

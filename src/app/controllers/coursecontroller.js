@@ -8,14 +8,14 @@ class SiteController{
     show(req,res,next){
         const course = Course.findOne({name: req.params.courseName});
         course.then(courses =>{
-            res.render('courses/show',{courses : mongooseObject(courses)});
+            res.render('courses/show',{courses : mongooseObject(courses),user: req.oidc.user});
         })
         course.catch(next);
 
     };
     //get   /courses/create
     create(req,res,next){
-        res.render('courses/create');
+        res.render('courses/create',{user: req.oidc.user});
     };
 
     //post /course/store
@@ -35,7 +35,7 @@ class SiteController{
     edit(req,res,next){
         Course.findOne({name: req.params.id})
             .then(course=> res.render('courses/edit',{ 
-                course: mongooseObject(course)
+                course: mongooseObject(course) , user: req.oidc.user
             }))
             .catch(next);
     };

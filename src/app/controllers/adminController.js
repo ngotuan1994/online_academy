@@ -7,7 +7,7 @@ const { requiresAuth } = require('express-openid-connect');
 
 class adminController{
     setrole(req,res,next){
-        res.render('admin/setRoles');
+        res.render('admin/setRoles',{layout: 'admin.handlebars', user: req.oidc.user});
     }
     updaterole(req,res,next){
 
@@ -19,7 +19,7 @@ class adminController{
     }
     listuser(req,res,next){
         const role = Role.find({});
-        role.then(roles =>res.render('admin/listuser', {
+        role.then(roles =>res.render('admin/listuser', {layout: 'admin.handlebars', user: req.oidc.user,
             roles : arrayMongooseObject(roles)}))
         .catch(next);            
     }
