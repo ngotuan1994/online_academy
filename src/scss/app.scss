@@ -240,7 +240,7 @@
     background-color: rgba(158, 171, 178, 0.425);
     padding: 1.5rem 8rem;
     height: 100px;
-    margin-top: 0px; 
+    margin-top: 50px; 
     clear: both;
     position: relative;
   }
@@ -282,19 +282,21 @@
   }
     
     
-  header div  h1 {
+  header  nav  div  h1 a{
       margin-left: 1rem;
       font-size: 2.5rem;
       font-family:'Prata', 'Times New Roman', Times, serif;
+      text-decoration: none;
+      color: black;
   }
-  
+
   header nav {
       margin: 1rem 0 0 5%;
       display: flex;
       flex-direction: row;
       float: right;
   }
-  
+
   header ul {
       float: right;
   }
@@ -302,15 +304,15 @@
       display: inline-block;
       padding: 0 1.5rem 0 0;
   }
-  
-  header nav a {
+
+  header nav ul a {
       font-family:'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-decoration: none;
       font-size: 1.2rem;
       color: #0072E1;
   }
-  
-  header nav a:hover {
+
+  header nav ul a:hover {
       color:#ccc;
   }
 
