@@ -14,22 +14,21 @@ class SiteController{
                 })
                 course.catch(next);
             }
-            else if ( role.role == 'prof'){
+            if ( role.role == 'prof'){
                 const course = Course.find({});
                 course.then(courses =>{
                     res.render('home',{layout: 'main.handlebars',courses : arrayMongooseObject(courses) , user: req.oidc.user });
                 })
                 course.catch(next);
             }
-            else{
-                const course = Course.find({});
+        })
+        .catch(()=>{
+            const course = Course.find({});
                 course.then(courses =>{
                     res.render('home',{layout: 'user.handlebars',courses : arrayMongooseObject(courses) , user: req.oidc.user });
                 })
                 course.catch(next);
-            }
-        })
-        .catch(next);
+        });
         // else if( Role.find({ email : req.oidc.user.email, role : 'prof' })){
             // const course = Course.find({});
             // course.then(courses =>{

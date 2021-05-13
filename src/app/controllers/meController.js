@@ -20,20 +20,21 @@ class meController{
                     courses : arrayMongooseObject(courses)}))
                 .catch(next);        
             }
-            if(roles.role == "prof"){
+            else if(roles.role == "prof"){
                 UserCourse.find({email: req.oidc.user.email})
                 .then(courses => res.render('me/storedCoursesProf', { layout: 'main.handlebars', user: req.oidc.user,
                     courses : arrayMongooseObject(courses)}))
                 .catch(next); 
             }
-            if(roles.role =="user"){
+        })
+        .catch(()=>{
                 UserCourse.find({email: req.oidc.user.email})
                 .then(courses => res.render('me/storedCoursesStudent', { layout: 'user.handlebars', user: req.oidc.user,
                     courses : arrayMongooseObject(courses)}))
                 .catch(next);  
-            }
+            });
 
-        })
+        }
 
 
 
@@ -51,7 +52,7 @@ class meController{
         // }
        
 
-    }
+    
 
 
 
