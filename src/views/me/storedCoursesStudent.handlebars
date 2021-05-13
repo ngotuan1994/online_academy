@@ -1,0 +1,29 @@
+<div classs="mt-4">
+    <h3>My Courses</h3>
+
+        <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Course Name</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        {{#each courses}}
+        {{#each this.courses}}
+        <tr>
+            <th scope="row">{{@index}}</th>
+            
+            <td>{{this}}</td>
+            
+            <td>
+                <a href="/courses/{{this}}/delete" class ="btn btn-link">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+        {{/each}}
+    </tbody>
+    </table>
+</div>

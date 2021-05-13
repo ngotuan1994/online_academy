@@ -3,4 +3,3 @@ dotenv
 .env*
 *.env
 .env
-src/public/css
