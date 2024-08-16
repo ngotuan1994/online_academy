@@ -5,8 +5,7 @@ CPSC 362 – Foundations of Software Engineering <br />
 Spring 2021 <br />
 Team members: <br />
 -Tuan Ngo <br />
--Jimmie Dale Reyes <br />
--Evan Delasota <br />
+
 
 <h2> Link: </h2>
 Nodejs: https://nodejs.org/en/  </br>
